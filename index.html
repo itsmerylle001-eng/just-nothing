@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Bouquet for You</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="hearts-container"></div>
+
+    <div class="main-card">
+        <div class="bouquet-wrapper">
+            <img src="boquet.jpg" alt="Flower Bouquet" class="bouquet-img">
+        </div>
+        
+        <div class="content">
+            <h1>HAPPY VALENTINES! 🌸</h1>
+            <p>You make every day brighter!</p>
+        </div>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️'; 
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            
+            document.getElementById('hearts-container').appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
